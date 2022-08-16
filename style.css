@@ -123,6 +123,20 @@ p.equalsButton{
     align-self: center;
 }
 
+p.numberButton,
+p.equalsButton,
+p.operatorButton,
+p.deleteButton{
+    transition: all .2s ease-in-out;;
+}
+
+p.numberButton:hover,
+p.equalsButton:hover,
+p.operatorButton:hover,
+p.deleteButton:hover{
+    transform: scale(1.1);
+}
+
 .numRowContainer{
     display: flex;
     flex-direction: row-reverse;

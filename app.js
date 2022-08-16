@@ -73,11 +73,11 @@ function equalsButtonClick(button){
 
     if((numberOne && operator) && !(numberTwo)){
         console.log('no num2')
-        operator = '';
-        operatorDisplay.textContent = '';
-        numberTwo = null;
-        numberTwoDisplay.textContent = '';
-        currentNumberDisplay = numberOne;
+        reset()
+    }else if(!operator){
+        numberOne = currentNumber
+        numberOne.textContent = currentNumber
+        currentNumber.textContent = '.'
     } else{
         currentNumber='';
         currentNumberDisplay.textContent = '.';
@@ -94,7 +94,7 @@ function equalsButtonClick(button){
         operatorDisplay.textContent = operator
 
         summedUp = true
-    }
+    } 
 }
 
 function operate(num1, num2, op){
