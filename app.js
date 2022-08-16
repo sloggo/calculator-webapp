@@ -67,8 +67,8 @@ function numberButtonClick(button){
 
 function equalsButtonClick(button){
     console.log(button.id+ ' clicked')
-    console.log(operator, numberOne, numberTwo)
     numberTwo = parseInt(currentNumber)
+    console.log(operator, numberOne, numberTwo)
     numberTwoDisplay.textContent = numberTwo
 
     if((numberOne && operator) && !(numberTwo)){
@@ -109,7 +109,7 @@ function operate(num1, num2, op){
         case '*':
             result = multiplication(num1, num2)
             break;
-        case 'divison':
+        case 'divide':
             result = division(num1, num2)
             break;
     }
