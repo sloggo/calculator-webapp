@@ -51,6 +51,10 @@ a{
 }
 
 .currentCalculation{
+    display: flex;
+}
+
+.currentCalculation{
     margin: 0px 0px 0px auto;
     padding: 10px 20px;
     font-size: 20px;
