@@ -1,0 +1,28 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    margin: 0px;
+    background-color: #e5e5e5;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    padding: 5px 40px;
+    background-color: #14213d;
+    color: #e5e5e5;
+}
+
+#webTitle{
+    font-size: 50px;
+}
+
+.nav{
+    margin-left: auto;
+    font-size: 25px;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #e5e5e5;
+}
