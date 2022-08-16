@@ -40,7 +40,7 @@ a{
     background-color: #fca311;
 }
 
-.topDisplay{
+.topDisplayContainer{
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -79,8 +79,9 @@ a{
     flex-direction: column;
 }
 
-.operatorButtons{
+.operatorButtonContainer{
     width: 100%;
+    margin: 10px 0px;
     display: flex;
     justify-content: space-between
 }
@@ -93,4 +94,33 @@ p.deleteButton{
     font-size: 30px;
     font-weight: 700;
     background-color: #e5e5e5;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.numberButtonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p.numberButton{
+    box-sizing: border-box;
+    padding: 10px 0px;
+    border-radius: 5px;
+    text-align: center;
+    height: 75px;
+    width: 100px;
+    font-size: 30px;
+    font-weight: 500;
+    background-color: #e5e5e5;
+    align-self: center;
+}
+
+.numRowContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+    justify-content: space-evenly;
+    
 }
