@@ -1,6 +1,7 @@
 const operatorButtons = document.querySelectorAll('.operatorButton');
 const numberButtons = document.querySelectorAll('.numberButton')
 const equalsButtonDisplay = document.querySelector('.equalsButton')
+const acButton = document.querySelector('.deleteButton');
 
 let currentNumber = '';
 let currentNumberDisplay = document.querySelector('.currentDisplay#number')
@@ -25,12 +26,17 @@ function operatorButtonClick(button){
         currentNumber='.';
         currentNumberDisplay.textContent = currentNumber;
         operatorDisplay.textContent = button.textContent
+    } else if(summedUp === true){
+        console.log('sumemeds up')
+        operator = button.id;
+        operatorDisplay.textContent = button.textContent
+        summedUp = false
     } else if(!numberTwo){
         operator = button.id;
         console.log('must operate')
-        //operate(numberOne, numberTwo, operator)
         numberTwo = parseInt(currentNumber)
         let result = operate(numberOne, numberTwo, operator)
+        summedUp = false
         numberOne = result;
         numberOneDisplay.textContent = numberOne;
         numberTwo = null;
@@ -45,7 +51,7 @@ function operatorButtonClick(button){
 
 function numberButtonClick(button){
     if (summedUp === true) {
-        summedUp = f
+        summedUp = false;
         reset()
     }
     console.log(button.id+ ' clicked')
@@ -62,6 +68,8 @@ function numberButtonClick(button){
 function equalsButtonClick(button){
     console.log(button.id+ ' clicked')
     console.log(operator, numberOne, numberTwo)
+    numberTwo = parseInt(currentNumber)
+    numberTwoDisplay.textContent = numberTwo
 
     if((numberOne && operator) && !(numberTwo)){
         console.log('no num2')
@@ -71,8 +79,6 @@ function equalsButtonClick(button){
         numberTwoDisplay.textContent = '';
         currentNumberDisplay = numberOne;
     } else{
-        numberTwo = parseInt(currentNumber)
-        numberTwoDisplay.textContent = numberTwo
         currentNumber='';
         currentNumberDisplay.textContent = '.';
     }
@@ -83,7 +89,7 @@ function equalsButtonClick(button){
         numberOne = product
         numberOneDisplay.textContent = numberOne
         numberTwo = null;
-        numberTwoDisplay.textContent = numberTwo
+        numberTwoDisplay.textContent = ''
         operator = '';
         operatorDisplay.textContent = operator
 
@@ -92,7 +98,42 @@ function equalsButtonClick(button){
 }
 
 function operate(num1, num2, op){
+    let result = null;
+    switch (op){
+        case '+':
+            result = addition(num1, num2)
+            break;
+        case '-':
+            result = subtraction(num1, num2)
+            break;
+        case '*':
+            result = multiplication(num1, num2)
+            break;
+        case 'divison':
+            result = division(num1, num2)
+            break;
+    }
+    return result
+}
+
+function addition(num1, num2){
     return num1 + num2
+}
+
+function subtraction(num1, num2){
+    return num1 - num2
+}
+
+function multiplication(num1, num2){
+    return num1*num2
+}
+
+function division(num1, num2){
+    if (!(num2 === 0)){
+        return num1/num2
+    } else{
+        return 0
+    }
 }
 
 function reset(){
@@ -115,3 +156,5 @@ for(const button of numberButtons){
 }
 
 equalsButtonDisplay.addEventListener('click', (event) => equalsButtonClick(event.target))
+
+acButton.addEventListener('click', () => reset())
