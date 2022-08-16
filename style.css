@@ -108,7 +108,8 @@ p.deleteButton{
     align-items: center;
 }
 
-p.numberButton{
+p.numberButton,
+p.equalsButton{
     box-sizing: border-box;
     padding: 10px 0px;
     border-radius: 5px;
